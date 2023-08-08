@@ -7,7 +7,7 @@ ADD . /go-ethereum
 RUN cd /go-ethereum && make geth
 
 # Pull Geth into a second stage deploy alpine container
-FROM alpine:latest
+FROM alpine:3.18.3
 
 ENV PYTHONUNBUFFERED=1
 RUN apk add --update --no-cache groff less python3 curl jq ca-certificates && ln -sf python3 /usr/bin/python
